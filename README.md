@@ -4,12 +4,7 @@
 ### End-to-End Data Analytics Portfolio Project
 Analysed 7,043 customer records to uncover why a telecom company was losing 26.6% of its customers annually , above industry average. Built a full analytics pipeline across four tools, identified contract type and tenure as the biggest churn drivers, and recommended strategies projected to recover over $500K in recurring revenue.
 
-
-# Telco Customer Churn Analysis
-### End-to-End Data Analytics Portfolio Project
-
 **Tools:** Excel | MySQL | Python (Pandas, Matplotlib, Seaborn) | Power BI
-
 
 | Churn Rate | Customers Analysed | Revenue Lost to Churn | Monthly Revenue at Risk |
 |---|---|---|---|
@@ -47,6 +42,8 @@ I used a progressive cleaning pipeline — each tool built on the work of the on
 ```
 Raw CSV → Excel (initial clean) → MySQL (deep clean + analysis) → Python (EDA + visualisations) → Power BI (dashboard)
 ```
+
+---
 
 ### Step 1 — Excel: First Look and Initial Cleaning
 
@@ -89,7 +86,6 @@ With the cleaned Excel file imported into MySQL Workbench, I went much deeper. S
 ![SQL business queries - tenure groups and revenue analysis part 1](images/sql_queries_2.png)
 ![SQL business queries - revenue analysis part 2](images/sql_queries_3.png)
 ![SQL business queries - revenue by payment method and MRR](images/sql_queries_4.png)
-![SQL business queries - service combinations](images/sql_queries_5.png)
 ![SQL business queries - service combinations](images/sql_queries_5.png)
 
 ---
