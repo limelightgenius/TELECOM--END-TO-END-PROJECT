@@ -5,8 +5,11 @@
 Analysed 7,043 customer records to uncover why a telecom company was losing 26.6% of its customers annually , above industry average. Built a full analytics pipeline across four tools, identified contract type and tenure as the biggest churn drivers, and recommended strategies projected to recover over $500K in recurring revenue.
 
 
+# Telco Customer Churn Analysis
+### End-to-End Data Analytics Portfolio Project
+
 **Tools:** Excel | MySQL | Python (Pandas, Matplotlib, Seaborn) | Power BI
----
+
 
 | Churn Rate | Customers Analysed | Revenue Lost to Churn | Monthly Revenue at Risk |
 |---|---|---|---|
@@ -40,11 +43,10 @@ The dataset covers customer demographics (gender, age, dependents), account deta
 ## 3. My Approach
 
 I used a progressive cleaning pipeline — each tool built on the work of the one before it. I never modified the original file; every stage produced a cleaner version that fed into the next.
+
 ```
 Raw CSV → Excel (initial clean) → MySQL (deep clean + analysis) → Python (EDA + visualisations) → Power BI (dashboard)
 ```
-
----
 
 ### Step 1 — Excel: First Look and Initial Cleaning
 
@@ -65,21 +67,30 @@ Before writing a single query or line of code, I opened the raw CSV in Excel to 
 With the cleaned Excel file imported into MySQL Workbench, I went much deeper. SQL is where I turned raw rows into actual business answers.
 
 **Cleaning**
+
 - Trimmed whitespace from all text columns to prevent grouping errors in queries
 - Used UPDATE statements to catch any remaining inconsistent values
 - Fixed a BOM encoding issue that corrupted the customerID column name on import — renamed `ï»¿customerID` back to `customerID`. I'd use Google Sheets or Notepad++ to convert the file before importing next time to avoid this
 - Split the tenure column into four customer groups: New (0–5 months), Early (6–11), One-Year (12–23), Loyal (24+)
 - Used `SET SQL_SAFE_UPDATES = 0/1` to toggle safe mode when running bulk UPDATE queries — prevents accidental updates to all rows if a WHERE clause is missing
 
+![SQL cleaning - part 1](images/sql_cleaning_1.png)
+![SQL cleaning - part 2](images/sql_cleaning_2.png)
+
 **Business Queries**
+
 - Overall churn rate
 - Churn rate by contract type
 - Churn rate by tenure group
 - Revenue analysis — five separate angles: total vs lost, by churn status, by contract type, by payment method, and Monthly Recurring Revenue (MRR) at risk
 - Churn rate by service combinations
 
-![SQL cleaning queries](images/sql_cleaning.png)
-![SQL business query results](images/sql_results.png)
+![SQL business queries - overall churn and contract type](images/sql_queries_1.png)
+![SQL business queries - tenure groups and revenue analysis part 1](images/sql_queries_2.png)
+![SQL business queries - revenue analysis part 2](images/sql_queries_3.png)
+![SQL business queries - revenue by payment method and MRR](images/sql_queries_4.png)
+![SQL business queries - service combinations](images/sql_queries_5.png)
+![SQL business queries - service combinations](images/sql_queries_5.png)
 
 ---
 
@@ -88,6 +99,7 @@ With the cleaned Excel file imported into MySQL Workbench, I went much deeper. S
 After validating the key numbers in SQL, I moved into Python for deeper statistical work and visualisations that would make the patterns visible.
 
 **What I built**
+
 - **Customer Lifetime Value (CLV):** MonthlyCharges × tenure — the total value each customer has delivered
 - **Total_Service_Used:** Converted all service columns from Yes/No to 1/0 and summed them to see how many services each customer uses out of 9 available
 - **Risk Score model:** A custom 0–100 scoring system that classifies every customer as Low, Medium, or High Risk based on five churn indicators
@@ -95,18 +107,13 @@ After validating the key numbers in SQL, I moved into Python for deeper statisti
 - Distribution analysis on monthly charges and tenure
 
 **Visualisations**
-- Correlation heatmap
-- Churn rate by tenure — line chart showing the sharp drop as customers stay longer
-- Churned vs retained customers — overlapping histogram showing how new customers dominate the churned group
-- Distribution of monthly charges
-- Churn rate by number of services used — bar chart
-- Churn rate by contract type — bar chart
 
 ![Correlation heatmap](images/correlation_heatmap.png)
-![Churn rate by tenure](images/churn_by_tenure.png)
-![Churn rate by contract type](images/churn_by_contract.png)
+![Distribution of tenure](images/distribution_of_tenure.png)
 ![Churn rate by number of services](images/churn_by_services.png)
-![Churned vs retained distribution](images/churned_vs_retained.png)
+![Distribution of monthly charges](images/distribution_monthly_charges.png)
+![Tenure - churned vs retained customers](images/churned_vs_retained.png)
+![Churn rate by contract type - Python](images/python_churn_by_contract.png)
 
 ---
 
@@ -122,7 +129,7 @@ The final step was turning everything into a dashboard a non-technical manager c
 
 > I used a reference table to unpivot the service columns rather than modifying the original dataset. This keeps the source data intact and is considered best practice in Power BI modelling.
 
-![Power BI dashboard main view](images/powerbi_dashboard.png)
+![Power BI main dashboard](images/powerbi_dashboard.png)
 ![Power BI dashboard filtered to month-to-month customers](images/powerbi_filtered.png)
 
 ---
@@ -133,7 +140,7 @@ The final step was turning everything into a dashboard a non-technical manager c
 
 The company's churn rate is 26.6%, meaning roughly 1 in 4 customers is leaving. The telecom industry benchmark sits at 15–20%. That gap is not a minor inefficiency. Of 7,043 customers, 1,869 have already churned, taking $2.86 million in lifetime revenue with them. The business is losing customers at a rate it cannot sustain without addressing the root causes.
 
-![SQL overall churn rate result](images/sql_churn_rate.png)
+![SQL overall churn rate result](images/sql_churn_result.png)
 
 ---
 
@@ -179,7 +186,7 @@ More than half of all new customers leave within the first five months. They nev
 
 Churned customers were contributing $139,130 every month before they cancelled. That recurring gap needs to be replaced just to stand still, before any growth target is considered. Annualised, that is over $1.67 million in recurring revenue the business has lost access to.
 
-![SQL MRR result](images/sql_mrr.png)
+![SQL MRR result](images/sql_mrr_result.png)
 
 ---
 
@@ -193,8 +200,6 @@ Churned customers were contributing $139,130 every month before they cancelled. 
 | 7–9 services | ~5–22% |
 
 Every additional service a customer subscribes to increases switching costs. Leaving means losing multiple things at once, not just one. The data makes a clear case that bundling is not just a sales strategy — it is a retention strategy.
-
-![Churn rate by number of services](images/churn_by_services.png)
 
 ---
 
@@ -232,7 +237,8 @@ I built a risk scoring system in Python that assigns each customer a score from 
 
 The High Risk group is small but urgent — 31 customers flagged by the model as the most likely to leave. These are the customers the retention team should prioritise contacting this week.
 
-![Risk score Python output](images/risk_score_output.png)
+![Risk score Python code and output](images/risk_score_code.png)
+![Risk score churn rate results](images/risk_score_results.png)
 
 ---
 
