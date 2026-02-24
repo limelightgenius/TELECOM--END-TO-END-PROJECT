@@ -159,6 +159,7 @@ This was the most striking finding in the entire analysis. The difference betwee
 A month-to-month customer is 15x more likely to churn than someone on a two-year contract. The contract is not just a billing arrangement — it is the strongest predictor of whether a customer stays or goes. With no long-term commitment, there is no barrier to leaving the moment a competitor makes a better offer.
 
 ---
+![Churn rate by contract type](images/python_churn_by_contract.png)
 
 ### Finding 3 — New customers are leaving before they have settled in
 
