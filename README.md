@@ -174,8 +174,7 @@ Breaking churn down by tenure group revealed the clearest pattern in the data.
 
 More than half of all new customers leave within the first five months. They never stayed long enough to see the full value of the service. The positive side of this finding is that if the company can successfully engage customers through the first six months, retention improves significantly. **The first 90 days are make or break.**
 
-![Churn rate by tenure line chart](images/churn_by_tenure.png)
-
+![Churn rate by tenure](images/churn_by_tenure.png)
 ---
 
 ### Finding 4 — Revenue is bleeding every month
