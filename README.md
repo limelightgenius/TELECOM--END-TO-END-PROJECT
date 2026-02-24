@@ -6,6 +6,8 @@ Analysed 7,043 customer records to uncover why a telecom company was losing 26.6
 
 **Tools:** Excel | MySQL | Python (Pandas, Matplotlib, Seaborn) | Power BI
 
+---
+
 | Churn Rate | Customers Analysed | Revenue Lost to Churn | Monthly Revenue at Risk |
 |---|---|---|---|
 | 26.6% | 7,043 | $2,862,926 | $139,130 / month |
@@ -71,8 +73,8 @@ With the cleaned Excel file imported into MySQL Workbench, I went much deeper. S
 - Split the tenure column into four customer groups: New (0–5 months), Early (6–11), One-Year (12–23), Loyal (24+)
 - Used `SET SQL_SAFE_UPDATES = 0/1` to toggle safe mode when running bulk UPDATE queries — prevents accidental updates to all rows if a WHERE clause is missing
 
-![SQL cleaning - part 1](images/sql_cleaning_1.png)
-![SQL cleaning - part 2](images/sql_cleaning_2.png)
+![SQL cleaning part 1](images/sql_cleaning_1.png)
+![SQL cleaning part 2](images/sql_cleaning_2.png)
 
 **Business Queries**
 
@@ -82,11 +84,12 @@ With the cleaned Excel file imported into MySQL Workbench, I went much deeper. S
 - Revenue analysis — five separate angles: total vs lost, by churn status, by contract type, by payment method, and Monthly Recurring Revenue (MRR) at risk
 - Churn rate by service combinations
 
-![SQL business queries - overall churn and contract type](images/sql_queries_1.png)
-![SQL business queries - tenure groups and revenue analysis part 1](images/sql_queries_2.png)
-![SQL business queries - revenue analysis part 2](images/sql_queries_3.png)
-![SQL business queries - revenue by payment method and MRR](images/sql_queries_4.png)
-![SQL business queries - service combinations](images/sql_queries_5.png)
+![SQL queries - overall churn rate and contract type](images/sql_queries_1.png)
+![SQL queries - tenure groups part 1](images/sql_queries_2.png)
+![SQL queries - tenure groups part 2 and revenue analysis](images/sql_queries_3.png)
+![SQL queries - revenue by churn status and contract type](images/sql_queries_4.png)
+![SQL queries - revenue by payment method and MRR](images/sql_queries_5.png)
+![SQL queries - churn by service combinations](images/sql_service_combinations.png)
 
 ---
 
@@ -109,7 +112,7 @@ After validating the key numbers in SQL, I moved into Python for deeper statisti
 ![Churn rate by number of services](images/churn_by_services.png)
 ![Distribution of monthly charges](images/distribution_monthly_charges.png)
 ![Tenure - churned vs retained customers](images/churned_vs_retained.png)
-![Churn rate by contract type - Python](images/python_churn_by_contract.png)
+![Churn rate by contract type](images/python_churn_by_contract.png)
 
 ---
 
@@ -196,6 +199,8 @@ Churned customers were contributing $139,130 every month before they cancelled. 
 | 7–9 services | ~5–22% |
 
 Every additional service a customer subscribes to increases switching costs. Leaving means losing multiple things at once, not just one. The data makes a clear case that bundling is not just a sales strategy — it is a retention strategy.
+
+![Churn rate by number of services](images/churn_by_services.png)
 
 ---
 
