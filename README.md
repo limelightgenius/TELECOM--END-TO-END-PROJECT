@@ -113,6 +113,8 @@ After validating the key numbers in SQL, I moved into Python for deeper statisti
 ![Distribution of monthly charges](images/distribution_monthly_charges.png)
 ![Tenure - churned vs retained customers](images/churned_vs_retained.png)
 ![Churn rate by contract type](images/python_churn_by_contract.png)
+![Churn rate by tenure](images/python_churn_by_tenure.png)
+
 
 ---
 
