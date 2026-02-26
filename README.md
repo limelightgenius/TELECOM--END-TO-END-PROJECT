@@ -24,7 +24,7 @@ The CEO framed the challenge in three questions:
 - Who is most likely to churn next?
 - What can we do to keep them?
 
-The financial motivation was clear: it costs 5x more to acquire a new customer than to retain one, and a 5% reduction in churn would save the business an estimated $2 million annually. My job was to turn 7,043 rows of customer data into answers the business could act on.
+The financial motivation was clear: it costs 5x more to acquire a new customer than to retain one, and a 5% reduction in churn would save the business an estimated $2 million annually. My job was to turn 7,032 rows of customer data into answers the business could act on.
 
 ---
 
@@ -197,10 +197,10 @@ Churned customers were contributing $139,130 every month before they cancelled. 
 
 | Services Used | Approximate Churn Rate |
 |---|---|
-| 1–2 services | ~49% |
-| 3–4 services | ~37–44% |
-| 5–6 services | ~25–31% |
-| 7–9 services | ~5–22% |
+| 1-2 services | - 49% |
+| 3-4 services | - 37–44% |
+| 5-6 services | - 25–31% |
+| 7-9 services | -5–22% |
 
 Every additional service a customer subscribes to increases switching costs. Leaving means losing multiple things at once, not just one. The data makes a clear case that bundling is not just a sales strategy - it is a retention strategy.
 
@@ -240,7 +240,7 @@ I built a risk scoring system in Python that assigns each customer a score from 
 | Medium Risk (40-69) | 4,402 | 49.33% |
 | High Risk (70-100) | 31 | 61.11% |
 
-The High Risk group is small but urgent — 31 customers flagged by the model as the most likely to leave. These are the customers the retention team should prioritise contacting this week.
+The High Risk group is small but urgent - 31 customers flagged by the model as the most likely to leave. These are the customers the retention team should prioritise contacting this week.
 
 ![Risk score Python code and output](images/risk_score_code.png)
 ![Risk score churn rate results](images/risk_score_results.png)
@@ -274,8 +274,8 @@ Rather than contacting all customers reactively, the retention team should expor
 |---|---|---|
 | Excel | Initial cleaning and exploration | Duplicate removal, value standardisation, column formatting |
 | MySQL | Data cleaning and business queries | UPDATE, CASE WHEN, GROUP BY, SUM, COUNT, ROUND, tenure segmentation |
-| Python — Pandas | Feature engineering and statistics | Calculated columns (CLV, Total Services, Risk Score), correlation matrix |
-| Python — Matplotlib / Seaborn | Visualisations | Line charts, bar charts, histograms, heatmaps |
+| Python - Pandas | Feature engineering and statistics | Calculated columns (CLV, Total Services, Risk Score), correlation matrix |
+| Python - Matplotlib / Seaborn | Visualisations | Line charts, bar charts, histograms, heatmaps |
 | Power BI | Interactive dashboard | DAX measures, slicers, KPI cards, reference table for unpivoting |
 | GitHub | Documentation and version control | README, project folder structure |
 
