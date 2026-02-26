@@ -45,6 +45,7 @@ I used a progressive cleaning pipeline - each tool built on the work of the one 
 Raw CSV → Excel (initial clean) → MySQL (deep clean + analysis) → Python (EDA + visualisations) → Power BI (dashboard)
 
 ---
+![Excel cleaned dataset](images/excel_raw_dataset.png)
 
 ### Step 1 - Excel: First Look and Initial Cleaning
 
@@ -130,8 +131,8 @@ The final step was turning everything into a dashboard a non-technical manager c
 
 > I used a reference table to unpivot the service columns rather than modifying the original dataset. This keeps the source data intact and is considered best practice in Power BI modelling.
 
-![Power BI main dashboard](images/powerbi_dashboard.png)
-![Power BI dashboard filtered to month-to-month customers](images/powerbi_filtered.png)
+![Power BI main dashboard](images/powerbi_newdashboard.png)
+![Power BI dashboard filtered to month-to-month customers](images/powerbi_newfiltered.png)
 
 ---
 
@@ -185,6 +186,7 @@ More than half of all new customers leave within the first five months. They nev
 | Revenue retained (active customers) | $13,193,241 |
 | Monthly revenue currently at risk | $139,131 per month |
 
+![Power BI dashboard filtered to month-to-month customers](images/ANALYSIS.png)
 Churned customers were contributing $139,130 every month before they cancelled. That recurring gap needs to be replaced just to stand still, before any growth target is considered. Annualised, that is over $1.67 million in recurring revenue the business has lost access to.
 
 ![SQL MRR result](images/sql_mrr_result.png)
