@@ -93,7 +93,7 @@ With the cleaned Excel file imported into MySQL Workbench, I went much deeper. S
 
 ---
 
-### Step 3 — Python: Exploratory Analysis and Visualisations
+### Step 3 - Python: Exploratory Analysis and Visualisations
 
 After validating the key numbers in SQL, I moved into Python for deeper statistical work and visualisations that would make the patterns visible.
 
