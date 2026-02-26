@@ -2,7 +2,7 @@
 
 # Telco Customer Churn Analysis
 ### End-to-End Data Analytics Portfolio Project
-Analysed 7,043 customer records to uncover why a fictional telecom company was losing 26.6% of its customers annually, which is above industry average. I Built a full analytics pipeline across four tools, identified contract type and tenure as the biggest churn drivers, and recommended strategies projected to recover over $500K in recurring revenue.
+Analysed 7,032 customer records to uncover why a fictional telecom company was losing 26.6% of its customers annually, which is above industry average. I Built a full analytics pipeline across four tools, identified contract type and tenure as the biggest churn drivers, and recommended strategies projected to recover over $450K in recurring revenue.
 
 **Tools:** Excel | MySQL | Python (Pandas, Matplotlib, Seaborn) | Power BI
 
@@ -10,7 +10,7 @@ Analysed 7,043 customer records to uncover why a fictional telecom company was l
 
 | Churn Rate | Customers Analysed | Revenue Lost to Churn | Monthly Revenue at Risk |
 |---|---|---|---|
-| 26.6% | 7,043 | $2,862,926 | $139,130 / month |
+| 26.6% | 7,032 | $2,862,926 | $139,131 / month |
 
 ---
 
@@ -183,7 +183,7 @@ More than half of all new customers leave within the first five months. They nev
 | Total revenue (all customers) | $16,056,168 |
 | Revenue lost to churned customers | $2,862,926 |
 | Revenue retained (active customers) | $13,193,241 |
-| Monthly revenue currently at risk | $139,130 per month |
+| Monthly revenue currently at risk | $139,131 per month |
 
 Churned customers were contributing $139,130 every month before they cancelled. That recurring gap needs to be replaced just to stand still, before any growth target is considered. Annualised, that is over $1.67 million in recurring revenue the business has lost access to.
 
